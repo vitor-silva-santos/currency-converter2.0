@@ -1,5 +1,22 @@
-import style from "styled-components";
+import styled from "styled-components";
 
-export const Container = style.div``;
+export const Container = styled.div`
+  padding: 60px 10px;
+  background-color: #000050;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 
-export const Title = style.h1``;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const Title = styled.h1`
+  color: gold;
+  font-weight: 700;
+  font-size: 33px;
+  text-align: center;
+`;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import TextField from "@mui/material/TextField";
 import MenuItem from "@mui/material/MenuItem";
 import currencies from "./option-currency";
+import arrow from "../../assets/arrow.png";
 
 export default function SelectTextFields({ setCurrencySelect, selectResult }) {
   return (
@@ -23,6 +24,7 @@ export default function SelectTextFields({ setCurrencySelect, selectResult }) {
           onChange={(currency) => {
             setCurrencySelect(currency.target.value);
           }}
+          popupIcon={<img src={arrow} width={"25px"} />}
         >
           {currencies.map((currency) => (
             <MenuItem key={currency.value} value={currency.value}>

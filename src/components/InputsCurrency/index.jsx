@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import { NumericFormat } from "react-number-format";
 import TextField from "@mui/material/TextField";
 import SelectOptionCurrency from "./selectCurrency";
-import { Container, ResultConvert } from "./style";
+import { Container, ResultConvert, ContainerInputs } from "./style";
 import Arrow from "../../assets/arrow.png";
 import { formatCurrency } from "../../utils/formatCurrency";
 
@@ -72,32 +72,47 @@ export default function FormattedInputs({ enviarDados, result }) {
 
   return (
     <Container>
-      <TextField
-        className="input"
-        label="Digite o valor"
-        value={values.numberformat}
-        onChange={handleChange}
-        name="numberformat"
-        id="inputNumber"
-        InputProps={{
-          inputComponent: NumericFormatCustom,
-        }}
-        variant="standard"
-      />
-      <SelectOptionCurrency setCurrencySelect={setCurrencySelect} />
+      <ContainerInputs>
+        <TextField
+          className="input"
+          label="Digite o valor"
+          InputLabelProps={{
+            style: {
+              color: "white",
+            },
+          }}
+          value={values.numberformat}
+          onChange={handleChange}
+          name="numberformat"
+          id="inputNumber"
+          sx={{
+            "& .Mui-focusVisible": {
+              "&:hover": {
+                borderColor: "red",
+              },
+            },
+          }}
+          InputProps={{
+            inputComponent: NumericFormatCustom,
+          }}
+          variant="standard"
+        />
+        <SelectOptionCurrency setCurrencySelect={setCurrencySelect} />
+      </ContainerInputs>
 
       <img className="arrow" src={Arrow} alt="seta para a direita" />
 
-      <ResultConvert id="resultado">
-        {formatCurrency(currencySelectResult, result)}
-      </ResultConvert>
+      <ContainerInputs>
+        <ResultConvert id="resultado">
+          {formatCurrency(currencySelectResult, result)}
+        </ResultConvert>
 
-      <SelectOptionCurrency
-        setCurrencySelect={setCurrencySelectResult}
-        selectResult
-      />
-
-      <button onClick={handleClick}>Enviar</button>
+        <SelectOptionCurrency
+          setCurrencySelect={setCurrencySelectResult}
+          selectResult
+        />
+      </ContainerInputs>
+      <button onClick={handleClick}>Converter</button>
     </Container>
   );
 }
