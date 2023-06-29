@@ -7,6 +7,13 @@ export const Container = styled.div`
   align-items: center;
   gap: 20px;
 
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
   .arrow {
     transform: rotate(270deg);
     width: 80px;
@@ -26,12 +33,32 @@ export const Container = styled.div`
       transition: 0s;
     }
   }
+
+  @media screen and (min-width: 730px) {
+    .box {
+      flex-direction: row;
+    }
+
+    .arrow {
+      transform: rotate(180deg);
+      width: 90px;
+    }
+
+    button {
+      padding: 20px 35px;
+      font-size: 16px;
+    }
+  }
 `;
 
 export const ContainerInputs = styled.div`
   display: flex;
   align-items: end;
   border-bottom: 1px solid gold;
+
+  .imgOption {
+    /* width: 50px; */
+  }
 
   /* Input de entrada de valor e seletores de opções de moedas */
   .MuiInputBase-input {

@@ -28,7 +28,13 @@ export default function SelectTextFields({ setCurrencySelect, selectResult }) {
         >
           {currencies.map((currency) => (
             <MenuItem key={currency.value} value={currency.value}>
-              <img src={currency.label} />
+              <img
+                src={currency.label}
+                className="imgOption"
+                width={"25px"}
+                height={"25px"}
+                style={{ borderRadius: "50%", objectFit: "contain" }}
+              />
               <span>{currency.value}</span>
             </MenuItem>
           ))}

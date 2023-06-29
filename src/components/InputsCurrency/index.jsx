@@ -72,46 +72,49 @@ export default function FormattedInputs({ enviarDados, result }) {
 
   return (
     <Container>
-      <ContainerInputs>
-        <TextField
-          className="input"
-          label="Digite o valor"
-          InputLabelProps={{
-            style: {
-              color: "white",
-            },
-          }}
-          value={values.numberformat}
-          onChange={handleChange}
-          name="numberformat"
-          id="inputNumber"
-          sx={{
-            "& .Mui-focusVisible": {
-              "&:hover": {
-                borderColor: "red",
+      <div className="box">
+        <ContainerInputs>
+          <TextField
+            className="input"
+            label="Digite o valor"
+            InputLabelProps={{
+              style: {
+                color: "white",
               },
-            },
-          }}
-          InputProps={{
-            inputComponent: NumericFormatCustom,
-          }}
-          variant="standard"
-        />
-        <SelectOptionCurrency setCurrencySelect={setCurrencySelect} />
-      </ContainerInputs>
+            }}
+            value={values.numberformat}
+            onChange={handleChange}
+            name="numberformat"
+            id="inputNumber"
+            sx={{
+              "& .Mui-focusVisible": {
+                "&:hover": {
+                  borderColor: "red",
+                },
+              },
+            }}
+            InputProps={{
+              inputComponent: NumericFormatCustom,
+            }}
+            variant="standard"
+          />
+          <SelectOptionCurrency setCurrencySelect={setCurrencySelect} />
+        </ContainerInputs>
 
-      <img className="arrow" src={Arrow} alt="seta para a direita" />
+        <img className="arrow" src={Arrow} alt="seta para a direita" />
 
-      <ContainerInputs>
-        <ResultConvert id="resultado">
-          {formatCurrency(currencySelectResult, result)}
-        </ResultConvert>
+        <ContainerInputs>
+          <ResultConvert id="resultado">
+            {formatCurrency(currencySelectResult, result)}
+          </ResultConvert>
 
-        <SelectOptionCurrency
-          setCurrencySelect={setCurrencySelectResult}
-          selectResult
-        />
-      </ContainerInputs>
+          <SelectOptionCurrency
+            setCurrencySelect={setCurrencySelectResult}
+            selectResult
+          />
+        </ContainerInputs>
+      </div>
+
       <button onClick={handleClick}>Converter</button>
     </Container>
   );

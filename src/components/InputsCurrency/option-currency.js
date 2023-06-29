@@ -1,6 +1,7 @@
 import USD from "../../assets/bandeiras/eua.svg";
 import BR from "../../assets/bandeiras/brasil.svg";
 import EUR from "../../assets/bandeiras/europa.svg";
+import CAD from "../../assets/bandeiras/canada.png";
 
 const currencies = [
   {
@@ -14,6 +15,10 @@ const currencies = [
   {
     value: "EUR",
     label: `${EUR}`,
+  },
+  {
+    value: "CAD",
+    label: `${CAD}`,
   },
 ];
 

@@ -19,4 +19,8 @@ export const Title = styled.h1`
   font-weight: 700;
   font-size: 33px;
   text-align: center;
+
+  @media screen and (min-width: 730px) {
+    font-size: 38px;
+  }
 `;

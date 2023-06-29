@@ -2,7 +2,7 @@ import ChartApi from "react-apexcharts";
 import formatedTime from "../../utils/formatTime";
 import PropTypes from "prop-types";
 
-import { Container } from "./style";
+import { Container, LegendaChart } from "./style";
 
 function Chart({ data }) {
   const dataCurrency = data;
@@ -90,6 +90,7 @@ function Chart({ data }) {
         type="area"
         height={400}
       />
+      <LegendaChart>Variação nos últimos 3 meses</LegendaChart>
     </Container>
   );
 }
